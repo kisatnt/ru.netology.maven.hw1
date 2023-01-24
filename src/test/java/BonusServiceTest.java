@@ -63,13 +63,13 @@ public class BonusServiceTest {
         assertEquals(expected, actual);
     }
     @org.junit.jupiter.api.Test
-    void shouldCalculateForUnRegisteredOutOfRange() {
+    void shouldCalculateForUnRegisteredEqual500() {
         BonusService service = new BonusService();
 
         // подготавливаем данные:
-        long amount = -100;
+        long amount = 50000;
         boolean registered = false;
-        long expected = 1;
+        long expected = 500;
 
         // вызываем целевой метод:
         long actual = service.calculate(amount, registered);
@@ -82,9 +82,9 @@ public class BonusServiceTest {
         BonusService service = new BonusService();
 
         // подготавливаем данные:
-        long amount = -100;
+        long amount = 15000;
         boolean registered = true;
-        long expected = 1;
+        long expected = 450;
 
         // вызываем целевой метод:
         long actual = service.calculate(amount, registered);
